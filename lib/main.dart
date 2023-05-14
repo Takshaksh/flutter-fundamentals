@@ -1,25 +1,30 @@
-import 'package:first_flutter/test/basics.dart';
+import 'package:first_flutter/riverpod/basic_riverpod.dart';
 import 'package:first_flutter/test/navigator.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main(){
-  // runApp(const FirstClass());
-  // runApp(const BasicFlutter());
-  runApp(
-    MaterialApp(
+  runApp(const ProviderScope(child: MyApp()));
+}
+
+class MyApp extends ConsumerWidget{
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return MaterialApp(
       title: "Navigator Example",
       theme: ThemeData(primarySwatch: Colors.green),
       debugShowCheckedModeBanner: false,
-      home: const ScreenOne(),
-    )
-  );
+      home: const BasicRiverpod(),
+    );
+  }
 }
 
 
 
 class FirstClass extends StatelessWidget{
   const FirstClass({Key? key}) : super(key: key);
-
 
   @override
   Widget build(BuildContext context) {
