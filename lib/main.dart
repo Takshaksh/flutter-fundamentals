@@ -1,5 +1,4 @@
-import 'package:first_flutter/riverpod/basic_riverpod.dart';
-import 'package:first_flutter/test/navigator.dart';
+import 'package:first_flutter/screens/post_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -16,7 +15,7 @@ class MyApp extends ConsumerWidget{
       title: "Navigator Example",
       theme: ThemeData(primarySwatch: Colors.green),
       debugShowCheckedModeBanner: false,
-      home: const BasicRiverpod(),
+      home: const PostScreen(),
     );
   }
 }
