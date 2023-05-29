@@ -1,3 +1,4 @@
+import 'package:first_flutter/screens/default_screen.dart';
 import 'package:first_flutter/screens/post_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -15,36 +16,9 @@ class MyApp extends ConsumerWidget{
       title: "Navigator Example",
       theme: ThemeData(primarySwatch: Colors.green),
       debugShowCheckedModeBanner: false,
-      home: const PostScreen(),
+      home: const DefaultScreen(),
+      // home: const PostScreen(),
     );
   }
 }
 
-
-
-class FirstClass extends StatelessWidget{
-  const FirstClass({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "My first sincere flutter application",
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text("First App"),
-        ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const <Widget>[
-              Text("First text"),
-              Image(image: AssetImage("assets/images/color_img.png"))
-            ],
-          ),
-        )
-      ),
-    );
-  }
-  
-}
