@@ -35,7 +35,7 @@ class HomeScreenApp extends StatelessWidget {
               showCupertinoDialog(
                   context: context,
                   builder: (BuildContext context) {
-                    return CupertinoAlertDialog(
+                    return AlertDialog(
                       title: const Text("Are you sure?"),
                       content: const Text("You will be logged out."),
                       actions: [
@@ -60,18 +60,15 @@ class HomeScreenApp extends StatelessWidget {
           ),
           ElevatedButton(
               onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const GridViewScreen()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const GridViewScreen()));
               },
               child: const Text("Show GridView")),
           ElevatedButton(
             onPressed: () {
               showModalBottomSheet(
-                context: context, 
+                context: context,
                 isDismissible: false,
-                builder: (BuildContext context){
+                builder: (BuildContext context) {
                   return Container(
                     // color: Colors.indigo,
                     padding: const EdgeInsets.all(16),
@@ -83,11 +80,10 @@ class HomeScreenApp extends StatelessWidget {
                       children: [
                         const Text("Hello!"),
                         ElevatedButton(
-                          onPressed: (){
-                            Navigator.pop(context);
-                          },
-                          child: const Text("Close")
-                        )
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: const Text("Close"))
                       ],
                     ),
                   );

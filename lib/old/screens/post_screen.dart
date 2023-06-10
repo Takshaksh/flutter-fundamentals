@@ -1,4 +1,4 @@
-import 'package:first_flutter/states/post_states.dart';
+import 'package:first_flutter/old/states/post_states.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

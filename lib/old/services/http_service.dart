@@ -1,6 +1,6 @@
 import 'dart:convert' as converter;
 import 'dart:developer';
-import 'package:first_flutter/models/post.dart';
+import 'package:first_flutter/old/models/post.dart';
 import 'package:http/http.dart' as http;
 
 class HttpService{
