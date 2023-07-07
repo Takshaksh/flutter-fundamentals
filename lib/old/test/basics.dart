@@ -28,13 +28,13 @@ class WrapBasics extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return const SafeArea(
       child: Wrap(
         spacing: 10,
         runSpacing: 12,
         direction: Axis.vertical,
         runAlignment: WrapAlignment.center,
-        children: const <Widget>[
+        children: <Widget>[
           Chip(
             avatar: CircleAvatar(
               backgroundColor: Colors.deepPurple,

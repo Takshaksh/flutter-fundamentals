@@ -16,7 +16,7 @@ void main() {
 
     test("Check if the string is email", () {
       // Arrange
-      String userEmail = "shivam@space.com";
+      // String userEmail = "shivam@space.com";
       String wrongEmail = "shivam@spacecom";
 
       var result =  isEmail(wrongEmail); // Act
