@@ -1,4 +1,5 @@
 import 'package:first_flutter/utils/assets_manager.dart';
+import 'package:first_flutter/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -15,7 +16,7 @@ class _MediaPlayerScreenState extends ConsumerState<MediaPlayerScreen> {
   late VideoPlayerController _playerController;
   bool _isPlaying = false;
   double _sliderValue = 0.0;
-  int _skipSeconds = 10;
+  final int _skipSeconds = 10;
 
   void _togglePlayPause(){
     setState(() {
@@ -57,8 +58,9 @@ class _MediaPlayerScreenState extends ConsumerState<MediaPlayerScreen> {
   void initState() {
     super.initState();
 
-    _playerController = VideoPlayerController.asset(AssetsManager.video);
-    _playerController.setLooping(true);
+    // _playerController = VideoPlayerController.asset(AssetsManager.video);
+    _playerController = VideoPlayerController.networkUrl(Uri.parse(Constants.videoUrl));
+    // _playerController.setLooping(true);
     _playerController.addListener(() { 
       setState(() {
         _sliderValue = _playerController.value.position.inMilliseconds / _playerController.value.duration.inMilliseconds;
@@ -108,9 +110,9 @@ class _MediaPlayerScreenState extends ConsumerState<MediaPlayerScreen> {
                 ),
                 Expanded(
                   child: Slider(
+                    value: _sliderValue.isNaN == true? 0 : _sliderValue, 
                     min: 0.0,
                     max: 1.0,
-                    value: _sliderValue, 
                     onChanged: _onSliderChanged,
                   )
                 ),
