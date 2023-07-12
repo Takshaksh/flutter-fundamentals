@@ -18,7 +18,7 @@ Future<void> main() async {
 
   await NotifyService().initFirebaseNotification();
   final prefs = await SharedPreferences.getInstance();
-  log("\n\nToken found: ${prefs.getString(Constants.fcmToken)}");
+  // log("\n\nToken found: ${prefs.getString(Constants.fcmToken)}");
 
   runApp(const ProviderScope(child: MyApp()));
 }

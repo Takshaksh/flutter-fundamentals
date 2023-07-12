@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:first_flutter/utils/assets_manager.dart';
 import 'package:first_flutter/utils/constants.dart';
 import 'package:flutter/material.dart';
